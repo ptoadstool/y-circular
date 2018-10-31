@@ -24,6 +24,12 @@
         "lint": "eslint .",
         "dev": "nodemon -e js,json,html --exec \"npm run lint && npm start\""
     },
+    "jest": {
+        "testPathIgnorePatterns": [
+            "/node_modules/",
+            "/.c9/"
+        ]
+    },
     "author": "Kyle Jensen",
     "license": "UNLICENSE",
     "repository": "https://github.com/yale-mgt-656/hw5.git"
