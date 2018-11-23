@@ -2,8 +2,9 @@
 // handles a request, writing the response.
 function index(request, response) {
     const contextData = {
-        title: 'Eventbrite clone project starter',
-        salutation: 'Hello Yale SOM hackers',
+        title: 'All Events',
+        salutation: 'Hello Event Makers, Goers, and Funders!',
+        header: 'All Events',
 
     };
     response.render('index', contextData);

@@ -2,20 +2,39 @@
 
 {% block body %}
 <p>
-    This is the body of the index.
-</p>
-<p>
     {{salutation}}
 </p>
-<div class="cat-holder">
-    <input type="button" value="Next cat" id="next-cat">
-    <img src="/static/img/cat0.jpg" alt="Cat zero">
-    <img src="/static/img/cat1.jpg" alt="Cat one">
-    <img src="/static/img/cat2.jpg" alt="Cat two">
-    <img src="/static/img/cat3.jpg" alt="Cat three">
+ 
+ <div class="list-group list-group-mine">
+    <ul>
+        <li class="event" id="event-0">
+            <a class="list-group-item" id="title" href="/event">
+                <h1 class="list-group-item-heading">Event 0 Title</h1>
+                <p class="list-group-item-text">Event Date & Time</p>
+            </a>
+        </li>
+        <br>
+        <li class="event" id="event-1">
+            <a class="list-group-item" id="title" href="/event">
+                <h1 class="list-group-item-heading">Event 1 Title</h1>
+                <p class="list-group-item-text">Event Date & Time</p>
+            </a>
+        </li>
+        <br>
+        <li class="event" id="event-2">
+            <a class="list-group-item" id="title" href="/event">
+                <h1 class="list-group-item-heading">Event 2 Title</h1>
+                <p class="list-group-item-text">Event Date & Time</p>
+            </a>
+        </li>
+    </ul>
 </div>
+
+    <div>
+        <a class="nav-link" id="new" href="/events/new">Create an Event</a>
+    </div>
 {% endblock %}
 
-{% block late_loading_js %}
+<!-- {% block late_loading_js %}
 <script src="/static/js/catgifs.js"></script>
-{% endblock %}
+{% endblock %} -->
