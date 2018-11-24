@@ -54,7 +54,14 @@ function getById(id) {
     return null;
 }
 
+/* Returns the first event that has a particular id. */
+function getMaxId() {
+    const maxID = Math.max(...allEvents.map(x => x.id));
+    return maxID;
+}
+
 module.exports = {
     all: allEvents,
     getById,
+    getMaxId,
 };
