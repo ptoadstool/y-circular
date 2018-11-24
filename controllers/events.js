@@ -1,3 +1,7 @@
+const eventModels = require('../models/events.js');
+
+let theEvent = null;
+
 // Create a function which is a "controller", it
 // handles a request, writing the response.
 function newEvent(request, response) {
@@ -9,9 +13,9 @@ function newEvent(request, response) {
     };
     if (request.method === 'POST') {
         console.log('This is a POST request');
-        console.log(request.body);
         const errors = [];
-        const theEvent = request.body;
+        theEvent = request.body;
+        theEvent.id = eventModels.getMaxId() + 1;
         if (!theEvent.title || !theEvent.title.length > 50) {
             errors.push('Invalid or Missing Title');
         }
@@ -21,18 +25,25 @@ function newEvent(request, response) {
         if (!theEvent.image) {
             errors.push('Image cannot be blank.');
         }
+        // is image .jpg, .png, or .gif?
         // https://stackoverflow.com/questions/5873810/how-can-i-get-last-characters-of-a-string-using-javascript
         const ext = theEvent.image.substr(theEvent.image.length - 4);
         console.log(ext);
-        if (ext !== '.jpg' || ext !== '.png' || ext !== '.gif') {
+        if (ext !== '.jpg' && ext !== '.png' && ext !== '.gif') {
             errors.push('Image must either be .jpg, .png, or .gif format.');
         }
         // IF URL INVALID ERROR - NEED TO FIGURE OUT HOW TO TEST THIS
+        if (errors.length === 0) {
+            console.log('The new events is ', theEvent);
+            eventModels.all.push(theEvent);
+            return response.redirect(`/events/${theEvent.id}`);
+        }
         contextData.errors = errors;
     }
-    response.render('newEvent', contextData);
+    return response.render('newEvent', contextData);
 }
 
 module.exports = {
     newEvent,
+    theEvent,
 };
