@@ -9,7 +9,7 @@
         <ul>
             {% for event in eventData %}
                 <li class="event" id="event-{{ event.id }}">
-                    <a class="list-group-item" id="title" href='/event/{{ event.id }}'>
+                    <a class="list-group-item" id="title" href='/events/{{ event.id }}' onclick="doWithThisElement(this.id)">
                         <h1 class="list-group-item-heading">{{ event.title }}</h1>
                         <p class="list-group-item-text">{{ event.date }}</p>
                     </a>
