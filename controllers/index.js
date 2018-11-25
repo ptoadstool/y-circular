@@ -11,18 +11,17 @@ function index(request, response) {
     };
     /* Creates array of event info to display */
     const allEvents = eventModels.all;
-    // const display = [];
     // https://stackoverflow.com/questions/7196212/how-to-create-dictionary-and-add-key-value-pairs-dynamically
     const eventData = [];
     for (let i = 0; i < allEvents.length; i += 1) {
+        // event={} must be inside loop to clear it each iteration
+        // because when it was outside, pushing to eventData was
+        // overriding previous pushes
+        // https://stackoverflow.com/questions/19054997/push-is-overwriting-previous-data-in-array
         const event = {};
         event.id = allEvents[i].id;
         event.title = allEvents[i].title;
         event.date = allEvents[i].date;
-        // contextData[`title${j}`] = allEvents[i].title;
-        // contextData[`date${j}`] = allEvents[i].date;
-        // j += 1;
-        // console.log(event);
         eventData.push(event);
     }
     contextData.eventData = eventData;
