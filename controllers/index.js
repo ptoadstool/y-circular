@@ -4,7 +4,7 @@ const eventModels = require('../models/events.js');
 // handles a request, writing the response.
 function index(request, response) {
     const contextData = {
-        title: 'event',
+        title: 'All events',
         salutation: 'Hello Event Makers, Goers, and Funders!',
         header: 'All Events',
         eventData: [],
