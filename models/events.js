@@ -45,10 +45,12 @@ const allEvents = [
 /**
  * Returns the first event that has a particular id.
  */
+let event = null;
 function getById(id) {
     for (let i = 0; i < allEvents.length; i += 1) {
         if (id === allEvents[i].id) {
-            return allEvents[i];
+            event = allEvents[i];
+            return event;
         }
     }
     return null;
@@ -61,6 +63,7 @@ function getMaxId() {
 }
 
 module.exports = {
+    event,
     all: allEvents,
     getById,
     getMaxId,

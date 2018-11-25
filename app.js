@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 const indexControllers = require('./controllers/index.js');
 const aboutControllers = require('./controllers/about.js');
 const eventControllers = require('./controllers/events.js');
+const eventDetailControllers = require('./controllers/eventDetails.js');
 
 // Through this configuration, Nunjucks will "tell"
 // our Express app that it is handling the templates,
@@ -40,6 +41,6 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.newEvent);
-app.get(`/events/${eventControllers.theEvent}`, eventControllers.newEvent);
+app.get('/events/:id', eventDetailControllers.details);
 
 module.exports = app;

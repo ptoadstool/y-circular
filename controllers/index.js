@@ -26,7 +26,7 @@ function index(request, response) {
         eventData.push(event);
     }
     contextData.eventData = eventData;
-    console.log(contextData);
+    // console.log(contextData);
     return response.render('index', contextData);
 }
 
