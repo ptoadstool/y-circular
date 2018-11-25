@@ -3,13 +3,30 @@
 {% block body %}
 <p>
     {{salutation}}
+    {{display}}
 </p>
+ 
+ 
+ 
+<div class="list-group list-group-mine">
+    <ul>
+        {% for event in events %}
+            <li class="event" id="event-" + {{ allEvents.id }}>
+                <a class="list-group-item" id="title" href="/event">
+                    <h1 class="list-group-item-heading">{{event1}}</h1>
+                    <p class="list-group-item-text">Event Date & Time</p>
+                </a>
+            </li>
+            <br>
+        {% endfor %} 
+    </ul>
+</div>
  
  <div class="list-group list-group-mine">
     <ul>
         <li class="event" id="event-0">
             <a class="list-group-item" id="title" href="/event">
-                <h1 class="list-group-item-heading">Event 0 Title</h1>
+                <h1 class="list-group-item-heading">{{event1}}</h1>
                 <p class="list-group-item-text">Event Date & Time</p>
             </a>
         </li>
