@@ -1,52 +1,24 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<p>
-    {{salutation}}
-    {{display}}
-</p>
- 
- 
- 
-<div class="list-group list-group-mine">
-    <ul>
-        {% for event in events %}
-            <li class="event" id="event-" + {{ allEvents.id }}>
-                <a class="list-group-item" id="title" href="/event">
-                    <h1 class="list-group-item-heading">{{event1}}</h1>
-                    <p class="list-group-item-text">Event Date & Time</p>
-                </a>
-            </li>
-            <br>
-        {% endfor %} 
-    </ul>
-</div>
- 
- <div class="list-group list-group-mine">
-    <ul>
-        <li class="event" id="event-0">
-            <a class="list-group-item" id="title" href="/event">
-                <h1 class="list-group-item-heading">{{event1}}</h1>
-                <p class="list-group-item-text">Event Date & Time</p>
-            </a>
-        </li>
-        <br>
-        <li class="event" id="event-1">
-            <a class="list-group-item" id="title" href="/event">
-                <h1 class="list-group-item-heading">Event 1 Title</h1>
-                <p class="list-group-item-text">Event Date & Time</p>
-            </a>
-        </li>
-        <br>
-        <li class="event" id="event-2">
-            <a class="list-group-item" id="title" href="/event">
-                <h1 class="list-group-item-heading">Event 2 Title</h1>
-                <p class="list-group-item-text">Event Date & Time</p>
-            </a>
-        </li>
-    </ul>
-</div>
-
+    <p>
+        {{salutation}}
+    </p>
+    
+    <div class="list-group list-group-mine">
+        <ul>
+            {% for event in eventData %}
+                <li class="event" id="event-{{ event.id }}">
+                    <a class="list-group-item" id="title" href='/event/{{ event.id }}'>
+                        <h1 class="list-group-item-heading">{{ event.title }}</h1>
+                        <p class="list-group-item-text">{{ event.date }}</p>
+                    </a>
+                </li>
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
+    
     <div>
         <a class="nav-link" id="new" href="/events/new">Create an Event</a>
     </div>
