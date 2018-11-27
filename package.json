@@ -1,9 +1,10 @@
 {
-    "name": "project-starter",
+    "name": "y-circular",
     "version": "0.1.0",
-    "description": "Project starter for eventbrite clone",
+    "description": "Project starter for Y-Circular MVP website",
     "main": "server.js",
     "dependencies": {
+        "body-parser": "^1.18.3",
         "express": "^4.15.4",
         "nodemon": "^1.18.7",
         "nunjucks": "^3.0.1"
@@ -30,9 +31,7 @@
             "/.c9/"
         ]
     },
-    "author": "Kyle Jensen",
+    "author": "Bella Steiner and Michael Bergel, credit to Kyle Jensen",
     "license": "UNLICENSE",
-    "repository": ""
+    "repository": "https://github.com/ptoadstool/y-circular.git"
 }
-
-/* https://github.com/yale-mgt-656/hw5.git  */
